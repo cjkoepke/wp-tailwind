@@ -1,0 +1,113 @@
+.nav-primary {
+	@apply hidden;
+
+	a {
+		@apply text-gray-800 italic no-underline font-normal;
+
+		&:focus,
+		&:hover {
+			@apply underline;
+		}
+	}
+
+	li {
+		@apply leading-tight;
+	}
+
+	.highlight {
+		@apply text-primary-100 not-italic font-bold;
+	}
+
+	.button {
+		@apply text-white;
+	}
+
+	.current-menu-item a {
+		@apply font-bold not-italic;
+	}
+
+	@screen md {
+		@apply block;
+
+		.dark-header & {
+			transform: none;
+		}
+
+		li {
+			@apply mb-0;
+
+			&:last-child a {
+				@apply mr-0;
+			}
+		}
+
+		a {
+			@apply mx-4;
+		}
+
+		.button {
+			@extend .button-sm;
+		}
+
+		.sub-menu {
+			@apply hidden absolute bg-white shadow-lg;
+			@extend .list-reset;
+
+			a {
+				@apply text-gray-200;
+			}
+		}
+
+		.menu-item-has-children {
+			@apply relative;
+
+			&:hover {
+				.sub-menu {
+					@apply block;
+				}
+			}
+		}
+	}
+}
+
+.nav-mobile {
+	@extend .nav-primary, .transition;
+	@apply fixed left-0 top-0 h-full bg-white p-4 z-50 w-full overflow-scroll block z-50 text-center;
+	transform: translate3d(-100%, 0, 0);
+
+	&.active {
+		transform: translate3d(0, 0, 0);
+	}
+
+	a {
+		@apply block w-full text-2xl;
+	}
+
+	@screen md {
+		@apply hidden;
+	}
+
+	.admin-bar & {
+		top: 46px;
+
+		@screen md {
+			top: 32px;
+		}
+	}
+}
+
+
+@screen md {
+	.toggle {
+		@apply hidden;
+	}
+}
+
+.footer-menu {
+	@apply pl-0 ml-0;
+	@extend .list-reset;
+
+	a {
+		@apply text-white not-italic;
+	}
+}

@@ -1,0 +1,41 @@
+.post-title {
+	@apply text-4xl mb-0;
+
+	@screen lg {
+		@apply text-5xl;
+	}
+}
+
+.article {
+	@apply mt-8;
+
+	> p:first-of-type {
+		@apply text-lg;
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-bold;
+	}
+
+	h4,
+	h5,
+	h6 {
+		text-transform: uppercase;
+	}
+
+	@screen lg {
+		p,
+		ul,
+		ol {
+			@apply mt-4 mb-8 leading-normal;
+		}
+
+		p.text-sm {
+			@apply text-sm;
+		}
+	}
+}

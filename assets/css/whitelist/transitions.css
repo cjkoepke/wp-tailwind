@@ -1,0 +1,13 @@
+.transition {
+	transition: all .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+a,
+.button,
+.button-large,
+.button-lg,
+.button-primary,
+.button-bg-primary-200,
+.button-bg-primary-200 .icon {
+	@extend .transition;
+}

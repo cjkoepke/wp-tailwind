@@ -1,0 +1,12 @@
+.header {
+	@apply py-2 z-10 bg-gray-100;
+
+	@screen lg {
+		@apply py-6;
+	}
+
+	.container {
+		@apply flex justify-between items-center;
+	}
+}
+

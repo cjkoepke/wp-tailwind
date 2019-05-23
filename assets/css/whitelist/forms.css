@@ -1,0 +1,44 @@
+label {
+	@apply text-sm font-sans uppercase font-bold;
+}
+
+input,
+textarea,
+select {
+	@apply border-2 bg-gray-100 leading-normal rounded w-full py-3 px-4 mb-2 italic text-base w-full border-gray-300;
+	@extend .transition;
+
+	&[aria-invalid="true"] {
+		@apply border-primary-100;
+	}
+
+	&:focus {
+		@apply shadow-lg bg-gray-100 border-gray-200;
+		transform: translate3d(-1px, -1px, 0);
+		outline: 0;
+	}
+}
+
+input,
+textarea {
+	&:focus {
+		@apply border-gray-800;
+	}
+}
+
+textarea {
+	@apply h-24;
+}
+
+select {
+	@apply h-12 bg-gray-100;
+
+	option {
+		@apply bg-white;
+	}
+
+	&:focus {
+		@apply shadow-none border-gray-300;
+		transform: none;
+	}
+}

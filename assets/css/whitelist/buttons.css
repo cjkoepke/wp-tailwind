@@ -1,0 +1,55 @@
+.button {
+	@apply font-sans not-italic font-light rounded bg-gray-800 border-2 border-gray-800 leading-normal inline-block no-underline text-gray-200 px-6 py-4 shadow-lg text-center;
+	transform: translateY(0);
+
+	@screen lg {
+		@apply px-12 py-4;
+	}
+
+	&:focus,
+	&:hover {
+		@apply text-white border-gray-800 bg-gray-800 no-underline shadow;
+		transform: translate3d(1px, 2px, 0);
+		cursor: pointer;
+	}
+}
+
+.button-white {
+	@extend .button;
+	@apply bg-gray-100 text-gray-800;
+
+	&:focus,
+	&:hover {
+		@apply bg-white text-gray-600;
+	}
+}
+
+.button-primary {
+	@extend .button;
+	@apply bg-primary-100 text-white border-none;
+
+	&:focus,
+	&:hover {
+		@apply border-primary-100 bg-primary-100 text-white bg-primary-200;
+	}
+}
+
+.button-link {
+	@apply font-bold font-serif not-italic;
+}
+
+.highlight {
+	@apply font-bold font-sans not-italic text-primary-100;
+}
+
+.button-sm {
+	@apply px-4 py-2 text-sm;
+}
+
+.button-lg {
+	@apply px-12 py-4;
+
+	@screen lg {
+		@apply py-6;
+	}
+}

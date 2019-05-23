@@ -1,0 +1,17 @@
+.svg-icon {
+	width: 1em;
+	height: 1em;
+
+	path,
+	polygon,
+	rect {
+		@apply fill-current;
+	}
+
+	circle {
+		@apply stroke-current;
+		stroke-width: 1;
+	}
+}
+
+

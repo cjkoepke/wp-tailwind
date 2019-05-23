@@ -1,0 +1,54 @@
+{
+	"name": "wp-tailwind-theme",
+	"version": "1.0.0",
+	"description": "WP Tailwind",
+	"main": "./assets/js/main.js",
+	"scripts": {
+		"start": "cross-env NODE_ENV=development SERVER=true webpack --watch",
+		"watch": "cross-env NODE_ENV=development webpack --watch",
+		"dev": "cross-env NODE_ENV=development webpack",
+		"prod": "cross-env NODE_ENV=production webpack",
+		"build": "concurrently \"npm run prod\" \"npm run dev\""
+	},
+	"devDependencies": {
+		"@babel/core": "^7.3.4",
+		"@babel/polyfill": "^7.0.0",
+		"@babel/preset-env": "^7.4.5",
+		"@fullhuman/postcss-purgecss": "^1.1.0",
+		"autoprefixer": "^8.4.1",
+		"babel-loader": "^8.0.4",
+		"browser-sync": "^2.26.5",
+		"browser-sync-webpack-plugin": "^2.0.0",
+		"concurrently": "^3.5.1",
+		"copy-webpack-plugin": "^5.0.3",
+		"cross-env": "^5.2.0",
+		"css-loader": "^2.1.1",
+		"cssnano": "^4.1.10",
+		"imagemin-webpack-plugin": "^2.4.2",
+		"mini-css-extract-plugin": "^0.6.0",
+		"postcss-loader": "^2.1.4",
+		"resolve-url-loader": "^2.3.0",
+		"style-loader": "^0.21.0",
+		"tailwindcss": "^1.0.1",
+		"uglifyjs-webpack-plugin": "^2.1.2",
+		"webpack": "^4.20.2",
+		"webpack-cli": "^3.1.2"
+	},
+	"dependencies": {
+		"postcss-custom-properties": "^8.0.10",
+		"postcss-import": "^12.0.1",
+		"postcss-nested": "^4.1.2",
+		"regenerator": "^0.14.1"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not ie <= 11"
+	],
+	"engines": {
+		"node": ">=10.5.0",
+		"npm": ">=6.4.1"
+	},
+	"author": "",
+	"license": "ISC"
+}

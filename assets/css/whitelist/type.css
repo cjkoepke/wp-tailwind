@@ -1,0 +1,111 @@
+html {
+	font-size: 18px;
+}
+
+body {
+	@apply bg-gray-100 font-serif text-base font-light leading-normal antialiased;
+}
+
+strong,
+b {
+	@apply font-bold;
+}
+
+p {
+	@apply mt-2 mb-4;
+}
+
+a {
+	@apply text-primary-100 underline font-bold;
+
+	&:focus,
+	&:hover {
+		@apply text-gray-600;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply mt-8 mb-4 font-sans font-light;
+
+	@screen lg {
+		@apply mt-12;
+	}
+}
+
+h1,
+h2,
+h3 {
+	@apply leading-tight;
+}
+
+h4,
+h5,
+h6 {
+	@apply leading-normal;
+}
+
+h1 {
+	@apply text-5xl;
+}
+
+h2 {
+	@apply text-4xl;
+}
+
+h3 {
+	@apply text-3xl;
+}
+
+h4 {
+	@apply text-2xl;
+}
+
+h5 {
+	@apply text-xl;
+}
+
+h6 {
+	@apply text-xl tracking-wide;
+}
+
+ul,
+ol {
+	@apply mt-4 mb-10 ml-2;
+
+	@screen lg {
+		@apply ml-8;
+	}
+}
+
+li {
+	@apply mb-2;
+
+	.sidebar &,
+	.article & {
+		list-style-type: disc;
+	}
+}
+
+blockquote {
+	@apply text-center italic m-10;
+
+	@screen lg {
+		@apply m-16 text-lg;
+	}
+}
+
+.list-reset {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+::selection {
+	@apply bg-primary-100 text-gray-200;
+}
