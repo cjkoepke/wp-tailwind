@@ -1,15 +1,20 @@
 # WordPress Tailwind Starter Theme
 A minimalistic WordPress starter theme, based on Tailwind and PurgeCSS.
 
+## Requirements
+- [NodeJS](https://nodejs.org)
+- [Composer](https://getcomposer.org)
+
 ## How to get started
 1. Clone or [download](https://github.com/freeshifter/wp-tailwind/archive/master.zip "Download the WP Tailwind Zip") the project onto your `themes` directory `(./wp-content/themes)`
 2. Run a find/replace for the following strings:
 - `wp-tailwind`
 - `WP_Tailwind`
 - `wp_tailwind_`
-3. Run `npm install` 
-4. Update the BrowserSyncPlugin configuration in `webpack.config.js` to the domain of your local installation.
-4. Run `npm start` to begin development server.
+3. Run `composer install`
+4. Run `npm install` 
+5. Update the BrowserSyncPlugin configuration in `webpack.config.js` to the domain of your local installation.
+6. Run `npm start` to begin development server.
 
 ## Webpack
 The theme uses Webpack as its bundler with ES6 modules for JavaScript files. It also compresses images found in src automatically, and maps images to the appropriate destination through the `@images` alias. For example, `@images/example.jpg` would be compiled to `../images/example.jpg`.
