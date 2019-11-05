@@ -32,7 +32,7 @@
 		"tailwindcss": "^1.1.3",
 		"uglifyjs-webpack-plugin": "^2.2.0",
 		"webpack": "^4.41.2",
-		"webpack-cli": "^3.3.9"
+		"webpack-cli": "^3.3.10"
 	},
 	"dependencies": {
 		"postcss-custom-properties": "^8.0.11",
