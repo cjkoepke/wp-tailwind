@@ -35,6 +35,8 @@ if ( isProduction ) {
 			css: [
 				'./node_modules/tailwindcss/dist/base.css'
 			],
+			// Use Extractor configuration from Tailwind Docs
+			// https://tailwindcss.com/docs/controlling-file-size#setting-up-purge-css-manually
 			defaultExtractor: content => {
     				// Capture as liberally as possible, including things like `h-(screen-1.5)`
     				const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
@@ -115,6 +117,11 @@ const config = {
 			patterns: [{
                         	from: './assets/images/',
                         	to: 'images',
+				globOptions: {
+					ignore: [
+						'**/.DS_Store'
+					]
+				}
 			}]
 		}),
 		new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
