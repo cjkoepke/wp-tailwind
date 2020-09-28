@@ -35,16 +35,17 @@ if ( isProduction ) {
 			css: [
 				'./node_modules/tailwindcss/dist/base.css'
 			],
-			extractors: [
-				{
-					extractor: class TailwindExtractor {
-						static extract(content) {
-							return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
-						}
-					},
-					extensions: ['php', 'js', 'svg', 'css',]
-				}
-			],
+			// Use Extractor configuration from Tailwind Docs
+			// https://tailwindcss.com/docs/controlling-file-size#setting-up-purge-css-manually
+			defaultExtractor: content => {
+    				// Capture as liberally as possible, including things like `h-(screen-1.5)`
+    				const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
+
+    				// Capture classes within other delimiters like .block(class="w-1/2") in Pug
+    				const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || []
+
+    				return broadMatches.concat(innerMatches)
+  			},
 			whitelistPatterns: getCSSWhitelistPatterns()
 		})
 	)
@@ -87,7 +88,6 @@ const config = {
 						loader: 'css-loader',
 						options: {
 							importLoaders: 1,
-							context: 'postcss',
 							sourceMap: ! isProduction
 						}
 					},
@@ -113,13 +113,17 @@ const config = {
 		new MiniCssExtractPlugin({
 			filename: `[name]${prefix}.css`,
 		}),
-		new CopyWebpackPlugin([{
-			from: './assets/images/',
-			to: 'images',
-			ignore: [
-				'.DS_Store'
-			]
-		}]),
+		new CopyWebpackPlugin({
+			patterns: [{
+                        	from: './assets/images/',
+                        	to: 'images',
+				globOptions: {
+					ignore: [
+						'**/.DS_Store'
+					]
+				}
+			}]
+		}),
 		new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
 	]
 }
