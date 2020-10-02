@@ -30,9 +30,3 @@ Using the `tailwind.js` file, you can customize Tailwind's default styles before
 
 ## PurgeCSS
 *WP Tailwind* uses PurgeCSS to remove unused styles from the production build. It scans your project directory for strings that match SCSS declarations. You can modify the directories to search for in the `webpack.config.js` file. **Always check your production build to make sure styles you were developing with compiled correctly.**
-
-### Contributors
-- [@MarcoGlauser](https://github.com/MarcoGlauser)
-
-### Credits
-Originally inspired by the Heisenberg by Zeek Interactive.
